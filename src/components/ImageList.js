@@ -28,7 +28,7 @@ class ImageList extends React.Component{
 
     render() {
         return (
-            <div style={{ height: "700px", overflow: "auto" }}  ref={this.scrollRef}>
+            <div className="image-list-wrapper" style={{ height: "100vh", overflow: "auto" }}  ref={this.scrollRef}>
                 <div className="image-list">{this.renderImages()}</div>
                 <SearchLoading />
             </div>

@@ -1,0 +1,62 @@
+.header {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+    padding: 0 15px;
+    height: 58px;
+    background: #0e1b24;
+    /* #1e2427 */
+    color: #887d8f;
+}
+
+.header .logo {
+    float: left;
+    margin-right: 30px;
+    height: 40px;
+    position: relative;
+    margin-top: 9px;
+}
+
+.header .logo img {
+    height: 100%;
+}
+
+.header .search-wrapper {
+    float: left;
+}
+
+.header .header-links {
+    float: right;
+}
+
+.header .header-links ul {
+    list-style: none;
+}
+
+.header .header-links ul li {
+    float: left;
+    line-height: 58px;
+    padding: 0 15px;
+}
+
+.header .header-links ul li:last-child {
+    padding-right: 0;
+}
+
+.header .header-links ul li .btn-login {
+    background: #887d8f;
+    color: #efefef;
+    height: 40px;
+    border-radius: 0px;
+    line-height: 40px;
+    padding: 0 15px;
+    font-size: 14px;
+}
+
+.header .header-links ul li .btn-login:hover,
+.header .header-links ul li .btn-login:focus,
+.header .header-links ul li .btn-login:active {
+    background: #545f69;
+    color: #efefef;
+}

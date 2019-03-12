@@ -1,12 +1,13 @@
 import React from "react";
-import SearchBar from "./SearchBar";
 import ImageList from "./ImageList";
+import Header from "./Header";
+
 
 class App extends React.Component {
     render() {
         return (
-            <div className="ui container" style={{ marginTop: "10px" }}>
-                <SearchBar />
+            <div className="app-wrapper">
+                <Header />
                 <ImageList />
             </div>
         );

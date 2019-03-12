@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 class SearchLoading extends React.Component {
     render() {
         if (this.props.loading) {
-            return <div>Loading...</div>;
+            return <div className="text-center"><span className="fa fa-circle-o-notch fa-spin"></span>    Loading...</div>;
         } else {
             return <div/>
         }

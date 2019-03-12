@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import {searchImages} from "../actions";
 import GoogleAuth from "../auth/GoogleAuth";
+import "../style/search-form.css";
 
 class SearchBar extends React.Component {
     state = { query: "" };
@@ -17,17 +18,19 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <div className="ui segment">
+            <div className="search-form">
                 <form onSubmit={this.onFormSubmit} className="ui form">
                     <div className="field">
-                        <label>Image Search</label>
                         <input
                             type="text"
+                            placeholder="search images"
                             value={this.state.query}
                             onChange={e =>
                                 this.setState({query: e.target.value})
                             }
                         />
+                        <span className="fa fa-search">
+                        </span>
                     </div>
                 </form>
                 <GoogleAuth/>
