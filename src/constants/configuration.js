@@ -4,7 +4,7 @@ const Configuration = {
     //backend api for user interface data
     // host: "http://localhost:3001/"+version+"/api/",
     host: "http://localhost:3001/",
-    localPlayHost: "http://localhost:9000/",
+    localPlayHost: "http://localhost:9001/",
     playHost: "https://sharepics-play.herokuapp.com/",
 
     //google oAuth login credentials

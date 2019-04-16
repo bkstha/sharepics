@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {signIn, signOut} from "../actions";
 import Configuration from "../constants/configuration";
 import Keys from "../constants/keys";
+import {logger} from "../logger"
 
 
 class GoogleAuth extends React.Component {
@@ -40,18 +41,19 @@ class GoogleAuth extends React.Component {
     };
 
     renderAuthButton() {
+        logger.info(this.props.isSignedIn);
         if (this.props.isSignedIn === null) {
             return null;
         } else if (this.props.isSignedIn) {
             return (
-                <button onClick={this.onSignOutClick} className="ui red google button">
+                <button onClick={this.onSignOutClick} className="btn btn-login">
                     <i className="google icon"/>
                     Sign Out
                 </button>
             );
         } else {
             return (
-                <button onClick={this.onSignInClick} className="ui red google button">
+                <button onClick={this.onSignInClick} className="btn btn-login">
                     Sign In with Google
                 </button>
             );

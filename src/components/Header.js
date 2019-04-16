@@ -1,26 +1,43 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import "../style/header.css"
+import GoogleAuth from "../auth/GoogleAuth";
+import {NavLink} from "react-router-dom";
+import {connect} from "react-redux";
 
 class Header extends React.Component {
+
+    renderUploadImageBtn = () => {
+        if (this.props.isSignedIn) {
+            return (
+                <NavLink to={"/image-upload"}>
+                    <button className="btn btn-info">Upload Image</button>
+                </NavLink>
+            )
+        }
+    };
+
     render() {
         return (
             <div className="header clearfix">
                 <div className="logo">
-                    <img src="assets/images/logo.png" alt="share pic logo"></img>
+                    <NavLink to={"/"}>
+                        <img src="assets/images/logo.png" alt="share pic logo"/>
+                    </NavLink>
                 </div>
                 <div className="search-wrapper">
-                    <SearchBar />
-                </div> 
+                    <SearchBar/>
+                </div>
                 <div className="header-links">
                     <ul>
+                        <li>
+                            {this.renderUploadImageBtn()}
+                        </li>
                         <li>
                             Know About Us
                         </li>
                         <li>
-                            <span className="btn btn-login">
-                             Login
-                            </span>
+                            <GoogleAuth/>
                         </li>
                     </ul>
                 </div>
@@ -29,5 +46,13 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+    return {
+        isSignedIn: state.auth.isSignedIn
+    }
+};
+
+export default connect(
+    mapStateToProps, {}
+)(Header);
 

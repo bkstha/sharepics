@@ -1,7 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
 import {searchImages} from "../actions";
-import GoogleAuth from "../auth/GoogleAuth";
 import "../style/search-form.css";
 
 class SearchBar extends React.Component {
@@ -33,7 +32,6 @@ class SearchBar extends React.Component {
                         </span>
                     </div>
                 </form>
-                <GoogleAuth/>
             </div>
         );
     }
